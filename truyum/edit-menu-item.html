@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        img {
+            height: 50px;
+            float: left;
+        }
+
+      
+            .header{
+            text-align:left;
+            font-size:xx-large;
+            color:#ffffff;
+             height: 50px;
+                background-color: #374094;
+
+        }
+      
+            .lin {
+                height: 50px;
+                background-color: #374094;
+                text-align: right;
+                color:#ffffff;
+            }
+
+            a{
+                color:#ffffff;
+            }
+
+            section{
+            border:#0f0f0f;
+            height: 90vh;
+                
+            }
+
+             .tab{
+                margin:auto;
+                width:80%;
+
+            }
+
+            footer {
+                height: 50px;
+                background-color: #a39b9b;
+                color:#0f0f0f ;
+                text-align: left;
+            }
+    </style>
+    <script>
+        function validate() {
+            var userId = document.forms["editForm"]["UserId"].value;
+            var option = document.forms["editForm"]["option"].value;
+            var date = document.forms["editForm"]["date"].value;
+            var price = document.forms["editForm"]["price"].value;
+
+            if (userId == "") {
+                alert("name is required");
+                return false;
+            }
+            else if (option == "0") {
+                alert("Please choose an option");
+                return false;
+            }
+            else if(date == ""){
+                alert("date of launch cannot be empty");
+                return false;
+            }
+             else if(price == ""){
+                alert("price cannot be empty");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+ <header>
+ <div class="header">truYum
+        <img src="images/truyumlogo.png" />
+   </div>    
+   
+     <nav>
+    <div class="lin">
+        <a href="menu-item-list-admin.html"><u>Menu</u></a> 
+       </div>
+    </nav>
+    </header>
+     <section>
+      <div class="tab">
+       <h1>Edit Menu Item</h1>
+    <form name="editForm" action="edit-menu-item-status.html" onsubmit="return validate();" method="get">
+    
+        <label for="userId">Name</label><br>
+        <input type="text" id="userId" name="UserId" min="2" max="65" value="" /><br />
+        <p>
+        <table>
+        <tr>
+         <td><label for="price">Price(Rs.)</label></td>
+         <td><label for="availability">Active</label></td>
+         <td> <label for="date">Date of Launch</label></td>
+         <td> <label for="category">Category</label></td>
+         </tr>
+
+         <tr>
+       <td> <input type="number" id="price" name="price" value="" /></td>
+
+        
+       <td> <input type="radio" name="availability" checked="checked" value="Yes">Yes
+        <input type="radio" name="availability" value="No">No</td>
+        
+
+       
+       <td> <input type="text" id="date" name="date" value=""/></td>
+
+       
+       <td> <select name="option">
+            <option value="0">Select</option>
+          <option value="Starters">Starters</option>
+            <option value="Main Course">Main Course</option>
+            <option value="Dessert">Dessert</option>
+             <option value="Drinks">Drinks</option>
+        </select><td>
+        </table>
+        </p>
+
+        <p>
+        <input type="checkbox" id="freedelivery" name="freedelivery" value="freedelivery">
+        <label for="freedelivery">Free Delivery</label><br>
+        </p>
+
+        <p>
+        <input type="submit" name="name" value="Save" />
+        </p>
+    </form>
+    </div>
+    </section>
+
+     <footer>Copyright &copy; 2019</footer>
+
+</body>
+</html>
